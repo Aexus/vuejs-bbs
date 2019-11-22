@@ -19,5 +19,34 @@ export default [
     path: '/auth/login',
     name: 'Login',
     component: () => import('@/views/auth/Login')
+  },
+  // 编辑资料
+  {
+    path: '/users/1/edit',
+    name: 'EditUsers',
+    component: () => import('@/views/users/Edit'),
+    children: [
+      // 个人信息
+      {
+        path: '',
+        name: 'EditProfile',
+        component: () => import('@/views/users/Profile'),
+        meta: { auth: true }
+      },
+      // 修改头像
+      {
+        path: '/users/1/edit_avatar',
+        name: 'EditAvatar',
+        component: () => import('@/views/users/Avatar'),
+        meta: { auth: true }
+      },
+      // 修改密码
+      {
+        path: '/users/1/edit_password',
+        name: 'EditPassword',
+        component: () => import('@/views/users/Password'),
+        meta: { auth: true }
+      }
+    ]
   }
 ]
