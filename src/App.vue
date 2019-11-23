@@ -41,4 +41,6 @@ $fa-font-path: "~font-awesome/fonts/";
 @import "./styles/extra";
 
 body > .container { margin-top: 15px;}
+@import 'simplemde/dist/simplemde.min.css';
+@import 'highlight.js/styles/paraiso-dark.css';
 </style>

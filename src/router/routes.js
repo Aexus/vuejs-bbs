@@ -48,5 +48,25 @@ export default [
         meta: { auth: true }
       }
     ]
+  },
+  // 新建文章
+  {
+    path: '/articles/create',
+    name: 'Create',
+    component: () => import('@/views/articles/Create'),
+    meta: { auth: true }
+  },
+  // 显示文章
+  {
+    path: '/articles/:articleId/content',
+    name: 'Content',
+    component: () => import('@/views/articles/Content')
+  },
+  // 编辑文章
+  {
+    path: '/articles/:articleId/edit',
+    name: 'Edit',
+    component: () => import('@/views/articles/Create'),
+    meta: { auth: true }
   }
 ]

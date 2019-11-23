@@ -1,6 +1,22 @@
 <template>
   <div class="navbar-right">
     <ul v-if="auth" class="nav navbar-nav github-login">
+      <!-- 写文章 -->
+      <li>
+        <a  v-dropdown href="javascript:;">
+          <li class="fa fa-plus text-md"></li>
+        </a>
+
+        <ul class="dropdown-menu">
+          <li>
+            <router-link to="/articles/create">
+              <i class="fa fa-paint-brush text-md"></i>
+              写文章
+            </router-link>
+          </li>
+        </ul>
+      </li>
+
       <li>
         <a v-dropdown href="javascript:;">
           <span v-if="user">

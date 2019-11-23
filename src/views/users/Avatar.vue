@@ -19,7 +19,9 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-primary" @click="updateAvatar">上传头像</button>
+            <span @click="updateAvatar">
+              <button type="submit" class="btn btn-lg btn-primary">上传头像</button>
+            </span>
           </div>
         </div>
         </div>
