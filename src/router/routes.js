@@ -56,17 +56,28 @@ export default [
     component: () => import('@/views/articles/Create'),
     meta: { auth: true }
   },
-  // 显示文章
-  {
-    path: '/articles/:articleId/content',
-    name: 'Content',
-    component: () => import('@/views/articles/Content')
-  },
   // 编辑文章
   {
     path: '/articles/:articleId/edit',
     name: 'Edit',
     component: () => import('@/views/articles/Create'),
     meta: { auth: true }
+  },
+  {
+    path: '/:user',
+    name: 'Column',
+    component: () => import('@/views/articles/Column'),
+    children: [
+      {
+        path: '',
+        name: 'Column',
+        component: () => import('@/views/articles/List')
+      },
+      {
+        path: '/articles/:articleId/content',
+        name: 'Content',
+        component: () => import('@/views/articles/Content')
+      },
+    ]
   }
 ]
