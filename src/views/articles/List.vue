@@ -13,7 +13,7 @@
         <ul class="list-group">
           <!-- 使用 v-for 指令渲染文章列表 -->
           <li v-for="article in articles" class="list-group-item">
-            <img v-if="user" :src="user.avatar" class="avatar avatar-small">
+            <img :src="user.uavatar" class="avatar avatar-small">
             <router-link :to="`/articles/${article.articleId}/content`" class="title">
               {{ article.title }}
             </router-link>
@@ -32,12 +32,21 @@
 
   export default {
     name: 'List',
+    data() {
+      return {
+        articles: []
+      }
+    },
     computed: {
       ...mapState([
         'auth',
         'user',
-        'articles'
       ])
+    },
+    beforeRouteEnter(to, from ,next) {
+      next(vm =>{
+        vm.articles = vm.$store.getters.getArticlesByUid(null, to.params.user)
+      })
     }
   }
 </script>
