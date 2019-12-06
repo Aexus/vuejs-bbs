@@ -23,6 +23,7 @@
         </ul>
 
         <div class="navbar-right">
+          <SearchInput/>
           <TheEntry/>
         </div>
 
@@ -33,11 +34,13 @@
 
 <script>
 import TheEntry from '@/components/layouts/TheEntry'
+import SearchInput from '@/components/layouts/SearchInput'
 
 export default {
   name: 'TheHeader',
   components: {
-    TheEntry
+    TheEntry,
+    SearchInput
   },
   data() {
     return {
